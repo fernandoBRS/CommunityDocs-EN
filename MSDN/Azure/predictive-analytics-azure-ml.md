@@ -19,14 +19,14 @@ That's why Machine Learning has been so important and so studied in recent years
 ## Microsoft Azure Machine Learning
 
 Azure Machine Learning is a fully managed cloud service that enables you to easily build, deploy, and share predictive analytics solutions.
-There is a web-based IDE called [Azure Machine Learning Studio](https://studio.azureml.net/) 
+There is a web-based IDE called <a href="https://studio.azureml.net/" target="_blank">Azure Machine Learning Studio</a> 
 for development and deployment of models as web services. 
 You can consume these web services using some programming languages such as C#, R and Python.
 
 ![](./img/img-001.JPG) 
 
 ## Getting started
-First of all, go to [Azure ML Studio](https://studio.azureml.net/) website. 
+First of all, go to <a href="https://studio.azureml.net/" target="_blank">Azure ML Studio</a> website. 
 If you already has an Azure subscription, you can just sign in. 
 If you just want to do some tests, you can try it for free choosing the trial version.
 
@@ -39,12 +39,30 @@ with Parkinson's disease. Our model will follow these steps:
 3. Train the model;
 4. Predict the progression.
 
+## What we are going to predict?
+We are going to predict two scores of Unified Parkinson's disease rating scale (UPDRS): motor and total evaluation.
+
+* Motor UPDRS: Score that provides a measure of key motor symptoms.
+
+![](./img/img-002.JPG) 
+
+* Total UPDRS: Sum of points based on some questions, defining the severity of the disease in a patient. 
+The score range is 0 (not affected) to 176 (most severely affected).
+
+You can find detailed infomation about UPDRS <a href="http://viartis.net/parkinsons.disease/UPDRS2.pdf" target="_blank">here</a>.
+
 ## About the Dataset
 The dataset that we are going to use as sample is composed of a range of biomedical voice measurements 
-from 42 people with early-stage Parkinson's disease recruited to a six-month trial.
-
+from 42 people with early-stage Parkinson's disease recruited to a six-month trial. 
 It is important to mention that this dataset doesn't have any sensitive data, such as personal information, 
-IDs, account numbers and so on.
+IDs, account numbers and so on. 
 
-All data are stored in a CSV file and you can download it from 
-[UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Parkinsons+Telemonitoring) website.
+All data are stored in a CSV file (as you can see in the image below) and you can download it from 
+<a href="https://archive.ics.uci.edu/ml/datasets/Parkinsons+Telemonitoring" target="_blank">UCI Machine Learning Repository</a> website.
+In this page you can see all attribute information and metadata, so I will not discuss about 
+all of them because this is not the objetive of this article.
+
+![](./img/img-003.JPG) 
+
+
+
