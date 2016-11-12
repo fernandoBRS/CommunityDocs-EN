@@ -15,3 +15,10 @@ For the second group you have scenarios that the output is totally unpredictable
 
 Unfortunately, most of the real life problems belongs to the second group. 
 That's why Machine Learning has been so important and so studied in recent years.
+
+## Azure Machine Learning
+
+Azure Machine Learning is a fully managed cloud service that enables you to easily build, deploy, and share predictive analytics solutions.
+It has a web-based IDE called [Azure Machine Learning Studio](https://azure.microsoft.com/en-us/services/machine-learning/) 
+for development and deployment of models as web services. 
+You can consume these web services using some programming languages such as C#, R and Python.
