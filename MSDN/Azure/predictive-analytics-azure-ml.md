@@ -25,11 +25,6 @@ You can consume these web services using some programming languages such as C#, 
 
 ![](./img/img-001.JPG) 
 
-## Getting started
-First of all, go to <a href="https://studio.azureml.net/" target="_blank">Azure ML Studio</a> website. 
-If you already has an Azure subscription, you can just sign in. 
-If you just want to do some tests, you can try it for free choosing the trial version.
-
 ## Prediction of Parkinson's disease progression
 In this article we are going to create a very interesting solution that can help doctors to analyse the progress of patients 
 with Parkinson's disease. Our model will follow these steps:
@@ -42,7 +37,7 @@ with Parkinson's disease. Our model will follow these steps:
 ## What we are going to predict?
 We are going to predict two scores of Unified Parkinson's disease rating scale (UPDRS): motor and total evaluation.
 
-* Motor UPDRS: Score that provides a measure of key motor symptoms.
+* Motor UPDRS: Score that provides a measure of key motor symptoms:
 
 ![](./img/img-002.JPG) 
 
@@ -51,7 +46,7 @@ The score range is 0 (not affected) to 176 (most severely affected).
 
 You can find detailed infomation about UPDRS <a href="http://viartis.net/parkinsons.disease/UPDRS2.pdf" target="_blank">here</a>.
 
-## About the Dataset
+## About the dataset
 The dataset that we are going to use as sample is composed of a range of biomedical voice measurements 
 from 42 people with early-stage Parkinson's disease recruited to a six-month trial. 
 It is important to mention that this dataset doesn't have any sensitive data, such as personal information, 
@@ -64,5 +59,29 @@ all of them because this is not the objetive of this article.
 
 ![](./img/img-003.JPG) 
 
+## Getting started
+First of all, go to <a href="https://studio.azureml.net/" target="_blank">Azure ML Studio</a> website. 
+If you already has an Azure subscription, you can just sign in. 
+If you just want to do some tests, you can try it for free choosing the trial version.
+
+In Azure ML Studio, create a new Blank Expermiment.
+
+![](./img/img-004.JPG)
+
+## Get historical data of patients
+
+Basically there are two ways of importing data:
+
+* Upload a new dataset from local file. To do this, go to **Datasets** section and upload your CSV file.
+* Point to a data source, such as: Web URL, Azure Storage, on-premises SQL database, etc.
+
+I'll choose to point to a data source, because we already have the dataset sample on UCI webpage.
+In the search box, search by **Import Data** and drag it to the experiment area. 
+This item will be used to import the CSV file containing our historical data.
+
+In *Properties*, choose *Web URL via HTTP*, provide the *Data source URL* (you can get it <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/parkinsons/telemonitoring/parkinsons_updrs.data
+" target="_blank">here</a>) and choose CSV as *Data format*. As you can see in our CSV file, it has header row. So check the *CSV or TSV has header row* option.
+
+![](./img/img-005.JPG)
 
 
