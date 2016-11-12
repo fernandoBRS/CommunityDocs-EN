@@ -23,7 +23,7 @@ There is a web-based IDE called [Azure Machine Learning Studio](https://studio.a
 for development and deployment of models as web services. 
 You can consume these web services using some programming languages such as C#, R and Python.
 
-![](./img/pic-001.jpg) 
+![](./img/img-001.jpg) 
 
 ## Getting started
 First of all, go to [Azure ML Studio](https://studio.azureml.net/) website. 
