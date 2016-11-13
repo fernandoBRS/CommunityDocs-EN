@@ -64,7 +64,7 @@ First of all, go to <a href="https://studio.azureml.net/" target="_blank">Azure 
 If you already has an Azure subscription, you can just sign in. 
 If you just want to do some tests, you can try it for free choosing the trial version.
 
-In Azure ML Studio, create a new Blank Expermiment.
+In Azure ML Studio, create a new Blank Experiment.
 
 ![](./img/img-004.JPG)
 
@@ -100,7 +100,7 @@ Then connect the output of **Import Data** to the input of **Split Data**, as yo
 
 ![](./img/img-007.JPG)
 
-## Applying a learning algorithm
+## Choosing a learning algorithm
 
 Our dataset is ready to be used and now we need to choose the learning algorithm that fits to our needs. 
 There are a lot of algorithms for different purposes. Basically these algorithms are splitted in three types:
@@ -123,7 +123,54 @@ Supervised Learning is the type that fits in our problem. There are two techniqu
 Based on historical data, the algorithm creates the line that fits better for general cases. This line corresponds to a mathematical equation. 
 So, when you have an equation you can find any output (y) given any input (x). This process is known as **Linear Regression**.
 
+![](./img/img-008.JPG)
+
 * **Classification:** You have a dataset and you want to identify to which set of categories the input data belongs. 
 Some examples are pattern recognition and email validation ("spam" or "non-spam").
 
-![](./img/img-008.JPG)
+In our case we want to use *Linear Regression*, because our goal is making predictions.
+
+## Train and test the model
+
+We defined the learning algorithm. Now it's time to apply it to the dataset and train the model. 
+Drag a **Linear Regression** item and two **Train Model** items to the experiment area. 
+Each **Train Model** will be used to predict a value. We want to predict two values (motor UPDRS and total UPDRS), so we need two Train Model items.
+
+Connect the output port of **Linear Regression** to the left input port of both **Train Model** items. 
+Also, connect the left output port of **Split Data** to the right input port of both **Train Model** items. 
+The right output port of **Split Data** will be used later. The image below shows the current model.
+
+![](./img/img-009.JPG)
+
+As you can see, both **Train Model** items are requiring a value. 
+One **Train Model** will be used for training the *motor_UPDRS* value and the other item will be used for training *total_UPDRS*.
+So click on each Train Model item, go to *Properties* and click on *Launch column selector* button.
+
+![](./img/img-010.JPG)
+
+On the left, click on **With Rules**. Select *motor_UPDRS* column name for the first Train Model item and *total_UPDRS* for the second item.
+
+![](./img/img-011.JPG)
+
+To avoid confusing, is a good practice defining a description for each item. To do this, double click on a Train Model item and input a description. 
+For the first item I described as *"Training motor UPDRS"* and the second item as *"Training total UPDRS"*.
+
+![](./img/img-012.JPG)
+
+Click on *Run* to start the training. If everything is ok, drag two **Score Model** items to the experiment area. 
+Each Score Model will be used to generate predictions based on the trained model. 
+It will use the 25% of data that we splitted for tests previously as input to generate predictions.
+
+Connect the output port of a **Train Model** to the left input port of a **Score Model**. 
+Also, connect the right output port of **Split Data** to the right output port of both **Train Model** items.
+
+![](./img/img-013.JPG)
+
+Click on *Run* to update the training. If you want to compare the actual results with predicted results, just right-click on a **Score Model**, 
+select *Scored dataset* and then click on *Visualize*.
+
+Let's compare the results of motor UPDRS checking two columns: *motor_UPDRS* and *Scored Labels*. 
+If we compare the first row, we can see that *motor_UPDRS* (actual result) is equal to 8.5502 while the *Scored Labels* (predicted result) is equal to 7.766599. 
+As you can see the predicted result is pretty nice.
+
+![](./img/img-014.JPG)
