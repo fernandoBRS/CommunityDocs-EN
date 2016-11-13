@@ -105,20 +105,25 @@ Then connect the output of **Import Data** to the input of **Split Data**, as yo
 Our dataset is ready to be used and now we need to choose the learning algorithm that fits to our needs. 
 There are a lot of algorithms for different purposes. Basically these algorithms are splitted in three types:
 
-* Supervised Learning: Given some inputs and desired outputs by a data source, the goal is to learn a general pattern that maps these inputs and outputs. 
+* **Supervised Learning:** Given some inputs and desired outputs by a data source, the goal is to learn a general pattern that maps these inputs and outputs. 
 So you provide the right answer in advance.
-* Unsupervised Learning: The algorithm figure out the inputs and outputs itself. One example is *image classification* problem. 
+
+* **Unsupervised Learning:** The algorithm figure out the inputs and outputs itself. One example is *image classification* problem. 
 You probably don't know what the pictures are about, so it will need to find out similarities in the input data and figure out itself 
 the best way to classify the pictures into proper groups.
-* Reinforcement Learning: Is the problem of getting an agent to act in a dynamic environment so as to maximize its rewards. 
+
+* **Reinforcement Learning:** Is the problem of getting an agent to act in a dynamic environment so as to maximize its rewards. 
 For example, consider teaching a dog a new trick: you cannot tell it what to do, but you can reward/punish it if it does the right/wrong thing. 
 It has to figure out what it did that made it get the reward/punishment. 
 We can use a similar method to train computers to do many tasks, such as playing chess, driving vehicles, scheduling jobs, etc.
 
 Supervised Learning is the type that fits in our problem. There are two techniques that can be used: *regression* and *classification*.
 
-* Regression: You have a dataset and you want to use it to make predictions. A common example is predicting the price of a house given its size in feet. 
+* **Regression:** You have a dataset and you want to use it to make predictions. A common example is predicting the price of a house given its size in feet. 
 Based on historical data, the algorithm creates the line that fits better for general cases. This line corresponds to a mathematical equation. 
 So, when you have an equation you can find any output (y) given any input (x). This process is known as **Linear Regression**.
+
+* **Classification:** You have a dataset and you want to identify to which set of categories the input data belongs. 
+Some examples are pattern recognition and email validation ("spam" or "non-spam").
 
 ![](./img/img-008.JPG)
