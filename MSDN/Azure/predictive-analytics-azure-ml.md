@@ -205,3 +205,19 @@ It is a statistical metric indicating how well a model fits the data.
 For demo purposes this percentage is enough, but depending on the situation in a real case it must be improved.
 
 ![](./img/img-017.JPG)
+
+After some tests we could see that predictions are occuring as expected. Our output on **Score Model** is returning with two columns 
+(because we were comparing results previously). But now we just want prediction values as output, so let's remove the *motor_UPDRS* column.
+
+To do this, you can remove the **Evaluate Model**, drag the **Select Columns in Dataset** item and connect it with the **Score Model**. 
+The image below shows how it should be:
+
+![](./img/img-018.JPG)
+
+Now click on **Select Columns in Dataset**, go to *Properties* and click on *Launch column selector* button. 
+On the left, click on **With Rules** and **No Columns**. Select **Include**, **column names** and enter the *Scored Labels* column name.
+
+![](./img/img-019.JPG)
+
+Click on *Run*. Now, we can create a web service for our experiment. 
+Creating a web service enables us to consume 
