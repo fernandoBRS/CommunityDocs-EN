@@ -23,7 +23,7 @@ There is a web-based IDE called <a href="https://studio.azureml.net/" target="_b
 for development and deployment of models as web services. 
 You can consume these web services using some programming languages such as C#, R and Python.
 
-![](./img/img-001.JPG) 
+![](./img/img-001.png) 
 
 ## Prediction of Parkinson's disease progression
 In this article we are going to create a very interesting solution that can help doctors to analyse the progress of patients 
@@ -37,11 +37,11 @@ with Parkinson's disease. Our model will follow these steps:
 ## What we are going to predict?
 We are going to predict two scores of Unified Parkinson's disease rating scale (UPDRS): motor and total evaluation.
 
-1. **Motor UPDRS:** Score that provides a measure of key motor symptoms:
+* **Motor UPDRS:** Score that provides a measure of key motor symptoms:
 
 ![](./img/img-002.JPG) 
 
-2. **Total UPDRS:** Sum of points based on some questions, defining the severity of the disease in a patient. 
+* **Total UPDRS:** Sum of points based on some questions, defining the severity of the disease in a patient. 
 The score range is 0 (not affected) to 176 (most severely affected).
 
 You can find detailed infomation about UPDRS <a href="http://viartis.net/parkinsons.disease/UPDRS2.pdf" target="_blank">here</a>.
