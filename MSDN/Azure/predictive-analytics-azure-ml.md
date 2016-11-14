@@ -219,5 +219,12 @@ On the left, click on **With Rules** and **No Columns**. Select **Include**, **c
 
 ![](./img/img-019.JPG)
 
-Click on *Run*. Now, we can create a web service for our experiment. 
-Creating a web service enables us to consume 
+If you want to change the *Scored Labels* column name as output, you can use the **Edit Metadata** item. 
+
+![](./img/img-020.JPG)
+
+Click on *Run*. We finished our experiment for motor UPDRS prediction, finally!
+
+## Deploying the Machine Learning Web Service
+
+Now it is time to deploy our web service. 
