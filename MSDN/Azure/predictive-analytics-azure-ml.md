@@ -37,11 +37,11 @@ with Parkinson's disease. Our model will follow these steps:
 ## What we are going to predict?
 We are going to predict two scores of Unified Parkinson's disease rating scale (UPDRS): motor and total evaluation.
 
-* Motor UPDRS: Score that provides a measure of key motor symptoms:
+1. **Motor UPDRS:** Score that provides a measure of key motor symptoms:
 
 ![](./img/img-002.JPG) 
 
-* Total UPDRS: Sum of points based on some questions, defining the severity of the disease in a patient. 
+2. **Total UPDRS:** Sum of points based on some questions, defining the severity of the disease in a patient. 
 The score range is 0 (not affected) to 176 (most severely affected).
 
 You can find detailed infomation about UPDRS <a href="http://viartis.net/parkinsons.disease/UPDRS2.pdf" target="_blank">here</a>.
@@ -59,7 +59,14 @@ all of them because this is not the objetive of this article.
 
 ![](./img/img-003.JPG) 
 
-## Getting started
+## Experiments
+
+As mentioned, this solution requires two predictions. 
+For many cases you'll need to deal with only one prediction (so only one experiment is necessary).  
+So for this scenario we'll need to create two experiments: one for predicting motor UPDRS and one for predicting total UPDRS. 
+In the next step we are going to create a specific experiment for motor UPDRS and then create other experiment for total UPDRS.
+
+## Getting started: Prediction for motor UPDRS
 First of all, go to <a href="https://studio.azureml.net/" target="_blank">Azure ML Studio</a> website. 
 If you already has an Azure subscription, you can just sign in. 
 If you just want to do some tests, you can try it for free choosing the trial version.
@@ -133,44 +140,68 @@ In our case we want to use *Linear Regression*, because our goal is making predi
 ## Train and test the model
 
 We defined the learning algorithm. Now it's time to apply it to the dataset and train the model. 
-Drag a **Linear Regression** item and two **Train Model** items to the experiment area. 
-Each **Train Model** will be used to predict a value. We want to predict two values (motor UPDRS and total UPDRS), so we need two Train Model items.
+Drag a **Linear Regression** and a **Train Model** item to the experiment area. 
+The **Train Model** will be used to train the motor UPDRS value based on historical data.
 
-Connect the output port of **Linear Regression** to the left input port of both **Train Model** items. 
-Also, connect the left output port of **Split Data** to the right input port of both **Train Model** items. 
+Connect the output port of **Linear Regression** to the left input port of **Train Model** 
+and connect the left output port of **Split Data** to the right input port of **Train Model**. 
 The right output port of **Split Data** will be used later. The image below shows the current model.
 
 ![](./img/img-009.JPG)
 
-As you can see, both **Train Model** items are requiring a value. 
-One **Train Model** will be used for training the *motor_UPDRS* value and the other item will be used for training *total_UPDRS*.
-So click on each Train Model item, go to *Properties* and click on *Launch column selector* button.
+As you can see the **Train Model** item is requiring a value. 
+This item will be used for training the *motor_UPDRS* value based on *Linear Regression* algorithm.
+So click on the Train Model item, go to *Properties* and click on *Launch column selector* button.
 
 ![](./img/img-010.JPG)
 
-On the left, click on **With Rules**. Select *motor_UPDRS* column name for the first Train Model item and *total_UPDRS* for the second item.
+On the left, click on **With Rules** and select *motor_UPDRS* column name.
 
 ![](./img/img-011.JPG)
 
-To avoid confusing, is a good practice defining a description for each item. To do this, double click on a Train Model item and input a description. 
-For the first item I described as *"Training motor UPDRS"* and the second item as *"Training total UPDRS"*.
+To avoid confusing, is a good practice defining a description for each item. To do this, double click on the Train Model 
+(or any other item you want) and input a description.
 
 ![](./img/img-012.JPG)
 
-Click on *Run* to start the training. If everything is ok, drag two **Score Model** items to the experiment area. 
-Each Score Model will be used to generate predictions based on the trained model. 
-It will use the 25% of data that we splitted for tests previously as input to generate predictions.
+Click on *Run* to start the training. If everything is ok, drag a **Score Model** to the experiment area. 
+This item will be used to provide predictions based on the trained model. 
+It will use the 25% of data that we splitted for tests previously (in the Split Data item) as input to generate predictions.
 
-Connect the output port of a **Train Model** to the left input port of a **Score Model**. 
-Also, connect the right output port of **Split Data** to the right output port of both **Train Model** items.
+Connect the output port of the **Train Model** to the left input port of the **Score Model**. 
+Also, connect the right output port of **Split Data** to the right output port of the **Train Model** item.
 
 ![](./img/img-013.JPG)
 
-Click on *Run* to update the training. If you want to compare the actual results with predicted results, just right-click on a **Score Model**, 
-select *Scored dataset* and then click on *Visualize*.
-
-Let's compare the results of motor UPDRS checking two columns: *motor_UPDRS* and *Scored Labels*. 
-If we compare the first row, we can see that *motor_UPDRS* (actual result) is equal to 8.5502 while the *Scored Labels* (predicted result) is equal to 7.766599. 
-As you can see the predicted result is pretty nice.
+Click on *Run* to update the training. If you want to compare the actual results with predicted results, 
+just right-click on the **Score Model**, select *Scored dataset* and then click on *Visualize*.
 
 ![](./img/img-014.JPG)
+
+We just want to compare the *motor_UPDRS* with *Scored Labels*, so let's remove all other columns. 
+Click on the **Score Model**, go to *Properties* and uncheck *Append score columns to output*. 
+If you select *Visualize* again, you will have a visualization similar to this:
+
+![](./img/img-015.JPG)
+
+It is much better for comparing data, isn't it? If we compare the first row, we can see that *motor_UPDRS* (actual result) 
+is equal to 8.5502 while the *Scored Labels* (predicted result) is equal to 7.766599. 
+As you can see the predicted result seems good.
+
+But how can we test the quality of the results? We can do it using an item called **Evaluate Model**. 
+It is always recommended to use this item after Score Model, because it will help you see if the algorithm that you selected previously 
+is good enough for your case. If results are not close to what you expected, you can easily go back and choose 
+another learning algorithm and train you model again.
+
+So drag a **Evaluate Model** to the experiment area and connect the output port of the **Score Model** to the left input port of the **Evaluate Model**. 
+The image below shows the current model.
+
+![](./img/img-016.JPG)
+
+Click on *Run*. To see the evaluation, just right-click on the **Evaluate Model**, select *Evaluation results* and then click on *Visualize*. 
+
+The coefficient of determination (also known as R squared value) for motor UPDRS is about 90%. 
+It is a statistical metric indicating how well a model fits the data. 
+For demo purposes this percentage is enough, but depending on the situation in a real case it must be improved.
+
+![](./img/img-017.JPG)
