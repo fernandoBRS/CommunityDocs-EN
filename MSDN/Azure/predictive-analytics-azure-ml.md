@@ -217,7 +217,7 @@ On the left, click on **With Rules** and **No Columns**. Select **Include**, **c
 
 Confirm the column name and then click on *Run*. We finished our training experiment for total UPDRS prediction! 
 
-## Converting the training experiment to predictive experiment
+## Converting to predictive experiment
 
 Before deploying the web service, it is necessary to convert the training experiment to a predictive experiment. 
 This convertion will add some items, as **Web service input** and **Weeb service output**, and remove unnecessary items.
@@ -276,4 +276,23 @@ Enter the input values and then click on **Test Request-Response** button.
 
 ![](./img/img-028.JPG)
 
-The web service is working! On the right side you can see the predicted outcome.
+The web service is working! On the right side you can see the predicted outcome. 
+If you want to integrate the web service with your C#, Python or R application 
+you can click on **Consume** tab and go to **Sample Code** section.
+
+![](./img/img-029.JPG)
+
+## Conclusion
+
+As we could see, Azure Machine Learning can be applied in a lot of different scenarios. 
+For predictive analytics, the biggest challenge is defining what learning algorithm you 
+should use and what data are relevant to solve the problem. 
+Dragging items are very intuitive and you don`t necessarily need to write code for simple tasks.
+
+In few minutes you can create an amazing predictive analytics solution using the power of cloud computing. 
+Embrace the digital transformation!
+
+## About the Author
+
+[Fernando de Oliveira](https://www.linkedin.com/in/fernandobrs/en) is an intern at Microsoft and student of Computer Engineering. 
+Author of the book [UX Best Practices for Bot applications](https://aka.ms/ux-chatbots).
