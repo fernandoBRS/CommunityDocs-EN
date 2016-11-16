@@ -287,7 +287,7 @@ you can click on **Consume** tab and go to **Sample Code** section.
 As we could see, Azure Machine Learning can be applied in a lot of different scenarios. 
 For predictive analytics, the biggest challenge is defining what learning algorithm you 
 should use and what data are relevant to solve the problem. 
-Dragging items are very intuitive and you don`t necessarily need to write code for simple tasks.
+Dragging items are very intuitive and you don't necessarily need to write code for simple tasks.
 
 In few minutes you can create an amazing predictive analytics solution using the power of cloud computing. 
 Embrace the digital transformation!
