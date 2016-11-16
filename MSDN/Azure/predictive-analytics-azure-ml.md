@@ -51,7 +51,7 @@ Clinicians use the score of UPDRS to follow the progression of a person's Parkin
 
 We are going to predict the **total score of UPDRS**. It is a sum of points based on some questions, defining the severity of the disease in a patient. 
 The score range is 0 (not affected) to 176 (most severely affected). 
-You can find detailed infomation about UPDRS <a href="http://viartis.net/parkinsons.disease/UPDRS2.pdf" target="_blank">here</a>.
+You can find detailed information about UPDRS <a href="http://viartis.net/parkinsons.disease/UPDRS2.pdf" target="_blank">here</a>.
 
 ## About the dataset
 The dataset that we are going to use as sample is composed of a range of biomedical voice measurements 
@@ -223,7 +223,7 @@ Before deploying the web service, it is necessary to convert the training experi
 This convertion will add some items, as **Web service input** and **Weeb service output**, and remove unnecessary items.
 Click on **Set Up Web Service**, then **Predictive Web Service [Recommended]**.
 
-![](./img/img-020.jpg)
+![](./img/img-020.JPG)
 
 It will automatically convert your training experiment to a predictive experiment, so users can send data to your model 
 and receive your model's predictions. For more information about experiment convertion, see 
@@ -250,7 +250,7 @@ Drag and connect it between the **Score Model** and **Web service output**.
 On *Properties*, click on *Launch column selector* button. On **With Rules** select **No Columns**, 
 then select **Include**, **column names** and enter the *Scored Labels* column name. Click on the confirm button.
 
-![](./img/img-027.jpg)
+![](./img/img-027.JPG)
 
 Now click on the **Edit Metadata** item, go to *Properties* and enter the output name that you desire in *New column names* field. 
 Then, click on *Run*.
@@ -271,3 +271,9 @@ There is a free plan option if you intend to use the web service just for tests.
 Let's test if the web service is running as expected? When the deploy is complete, a new page will open and you can click on **Test Web Service**.
 
 ![](./img/img-026.JPG)
+
+Enter the input values and then click on **Test Request-Response** button.
+
+![](./img/img-028.JPG)
+
+The web service is working! On the right side you can see the predicted outcome.
