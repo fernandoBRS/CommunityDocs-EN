@@ -295,5 +295,5 @@ Embrace the digital transformation!
 ## About the Author
 
 Fernando de Oliveira is Intern at Microsoft, 
-open source contributor ([Github](https://github.com/fernandobrs)) and student of Computer Engineering. 
-Author of the book [UX Best Practices for Bot applications](https://aka.ms/ux-chatbots).
+author of the book [UX Best Practices for Bot applications](https://aka.ms/ux-chatbots) 
+and an open source contributor ([Github](https://github.com/fernandobrs)).
