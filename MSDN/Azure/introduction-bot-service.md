@@ -101,5 +101,12 @@ Then go to the web chat and test it again.
 ![](./img/azure-bot-service-014.JPG)
 
 **Done!** As you can see, we can create a bot from a template in seconds! 
+
 For more information about the service, see the [Azure Bot Service Overview](https://docs.botframework.com/en-us/azure-bot-service/). 
 Embrace the digital transformation!
+
+## About the Author
+
+Fernando de Oliveira is Intern at Microsoft, 
+author of the book [UX Best Practices for Bot applications](https://aka.ms/ux-chatbots) 
+and an open source contributor ([Github](https://github.com/fernandobrs)).
