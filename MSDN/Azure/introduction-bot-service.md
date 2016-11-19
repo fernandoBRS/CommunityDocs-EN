@@ -75,7 +75,7 @@ Natural Language Processing (NLP) is extremely important for chat bots, so you c
 It is important to mention that is possible to merge these templates and add new features. 
 For example, you can create a bot that uses NLP to have a natural interaction with users and triggers an event when a specific task is requested.
 
-After you have chosen the template, click on **Create bot**.
+Select a bot template and click on **Create bot**.
 
 ![](./img/azure-bot-service-010.JPG)
 
@@ -96,8 +96,10 @@ After any change in the code, you can click on **Save** button and test it again
 
 ![](./img/azure-bot-service-013.JPG)
 
-After save your changes, go to the web chat and test it again.
+Then go to the web chat and test it again.
 
 ![](./img/azure-bot-service-014.JPG)
 
-Done!
+**Done!** As you can see, we can create a bot from a template in seconds! 
+For more information about the service, see the [Azure Bot Service Overview](https://docs.botframework.com/en-us/azure-bot-service/). 
+Embrace the digital transformation!
