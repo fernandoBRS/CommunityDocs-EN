@@ -102,6 +102,13 @@ Then go to the web chat and test it again.
 
 **Done!** As you can see, we can create a bot from a template in seconds! 
 
+## Continuous integration
+
+If you want to download the source code and deploy it from an integrated environment such as GitHub and Visual Studio Team Services, 
+click on **Settings** tab, go to **Continuous integration** and click on **Configure**. 
+
+![](./img/azure-bot-service-015.JPG)
+
 For more information about the service, see the [Azure Bot Service Overview](https://docs.botframework.com/en-us/azure-bot-service/). 
 Embrace the digital transformation!
 
