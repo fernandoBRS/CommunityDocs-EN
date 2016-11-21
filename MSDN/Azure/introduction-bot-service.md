@@ -100,14 +100,25 @@ Then go to the web chat and test it again.
 
 ![](./img/azure-bot-service-014.JPG)
 
-**Done!** As you can see, we can create a bot from a template in seconds! 
+As you can see, it is working as expected!
 
-## Continuous integration
+## Adding Channels
 
-If you want to download the source code and deploy it from an integrated environment such as GitHub and Visual Studio Team Services, 
-click on **Settings** tab, go to **Continuous integration** and click on **Configure**. 
+It is possible to add your bot to a lot of different channels, such as Skype, Microsoft Teams, Facebook Messenger and much more. 
+To do it, click on the **Channels** tab and add your preferred channels. 
 
 ![](./img/azure-bot-service-015.JPG)
+
+## Bot Settings
+
+If you click on **Settings** tab, you can add image, name and description for your bot.
+
+![](./img/azure-bot-service-016.JPG)
+
+To download the source code and deploy it from an integrated environment, such as GitHub and Visual Studio Team Services, 
+go to **Continuous integration** and click on **Configure**.
+
+![](./img/azure-bot-service-017.JPG)
 
 For more information about the service, see the [Azure Bot Service Overview](https://docs.botframework.com/en-us/azure-bot-service/). 
 Embrace the digital transformation!
